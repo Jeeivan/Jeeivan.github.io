@@ -8,6 +8,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background: linear-gradient(to right, skyblue, lightgreen);
 }
 
 .nav ul {
@@ -49,14 +50,75 @@ body {
 .name {
   text-align: center;
   margin: 0;
-  font-size: 4em;
-  font-family: "Georgia";
+  font-size: 2em;
+  font-family: "Press Start 2P", "Georgia";
   font-weight: normal;
   color: grey;
+
+  animation: 3s linear 0s infinite running myColorChange;
+}
+
+@keyframes myColorChange {
+  0% {
+    color: red;
+  }
+  40% {
+    color: orange;
+  }
+  60% {
+    color: yellow;
+  }
+  80% {
+    color: green;
+  }
+  90% {
+    color: purple;
+  }
+  100% {
+    color: red;
+  }
 }
 
 .name-large {
-  font-size: 8em;
+  /*
+  font-size: 4em;
+  font-family: "Press Start 2P", "Georgia";
+  padding: 0.2em;
+  border-top-style: dotted;
+  border-bottom-style: dotted;
+  text-shadow: 5px 5px 5px black;
+  */
+
+  font-size: 5em;
+  letter-spacing: 10px;
+  font-family: monospace;
+  text-shadow: 5px 5px 5px black;
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(22), cursor 0.4s step-end infinite alternate;
+}
+
+@keyframes mySlide {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
 }
 
 .content-section {
@@ -120,6 +182,9 @@ body {
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 10px;
+
+  animation: mySlide;
+  animation-duration: 5s;
 }
 
 .btn {
